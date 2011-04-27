@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:ViewNavigatorApplication xmlns:fx="http://ns.adobe.com/mxml/2009" 
+							xmlns:s="library://ns.adobe.com/flex/spark"
+							backgroundColor="0x00ff00"
+							firstView="views.CustomizeHomeView">
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		s|ViewNavigator
+		{
+			skinClass: ClassReference("skins.CustomViewApp");
+		}
+	</fx:Style>
+	<fx:Declarations>
+		<s:Image id="backgroundImage" source="@Embed('assets/Default.png')" />
+	</fx:Declarations>
+</s:ViewNavigatorApplication>
