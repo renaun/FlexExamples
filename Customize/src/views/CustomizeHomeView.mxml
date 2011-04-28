@@ -19,6 +19,7 @@
 			{
 				// TODO Auto-generated method stub
 				navigator.pushView(CustomizeHomeView);
+				
 			}
 			
 			protected function view1_creationCompleteHandler(event:FlexEvent):void
@@ -27,7 +28,7 @@
 				var source:Array = [];
 				for (var i:int = 0; i < 100; i++) 
 				{
-					source.push({label: "Data Point : " + (i+1), data: i});
+					source.push({label: "Data Point: " + (i+1), data: i, image: "assets/pic" +(int(Math.random()*0xffff)%2) + ".png" });
 				}
 				
 				dataPoints = new ArrayCollection(source);
@@ -35,10 +36,17 @@
 			
 		]]>
 	</fx:Script>
-	
 	<s:Button label="Hi THere" click="button1_clickHandler(event)" />
-	<s:List width="100%" height="100%" contentBackgroundAlpha="0.0"
+	<s:HGroup width="100%" height="100%">
+	<s:List width="50%" height="100%" contentBackgroundAlpha="0.0"
 			itemRenderer="view.renderers.NoBackground"
 			dataProvider="{dataPoints}">
 	</s:List>
+	<s:List width="50%" height="100%" contentBackgroundAlpha="0.0"
+			itemRenderer="view.renderers.BasicImageLabelRenderer"
+			horizontalScrollPolicy="off"
+			dataProvider="{dataPoints}">
+	</s:List>
+		
+	</s:HGroup>
 </s:View>
