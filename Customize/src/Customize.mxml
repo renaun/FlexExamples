@@ -10,6 +10,11 @@
 		{
 			skinClass: ClassReference("com.renaun.flex.skins.BackgroundImageViewNavigatorSkin");
 		}
+		s|Button
+		{
+			skinClass: ClassReference("com.renaun.flex.skins.CustomImageButtonSkin");
+			
+		}
 		ree|AlternatingBackgroundImageLabelItemRenderer
 		{
 			downImage: Embed("assets/VideoPlayer.png");

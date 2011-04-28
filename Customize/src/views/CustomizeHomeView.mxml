@@ -37,14 +37,14 @@
 		]]>
 	</fx:Script>
 	<!-- LabelWithNoBackgroundItemRenderer -->
-	<s:Button label="Hi THere" click="button1_clickHandler(event)" />
+	<s:Button width="72" height="72" click="button1_clickHandler(event)" />
 	<s:HGroup width="100%" height="100%">
 	<s:List width="50%" height="100%" contentBackgroundAlpha="0.0"
 			itemRenderer="com.renaun.flex.renderers.AlternatingBackgroundImageLabelItemRenderer"
 			dataProvider="{dataPoints}">
 	</s:List>
 	<s:List width="50%" height="100%" contentBackgroundAlpha="0.0"
-			itemRenderer="com.renaun.flex.renderers.ImageLabelMXMLRenderer"
+			itemRenderer="com.renaun.flex.renderers.ImageLabelASRenderer"
 			horizontalScrollPolicy="off"
 			dataProvider="{dataPoints}">
 	</s:List>
