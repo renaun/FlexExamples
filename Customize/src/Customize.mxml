@@ -5,9 +5,16 @@
 							firstView="views.CustomizeHomeView">
 	<fx:Style>
 		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace ree "com.renaun.flex.renderers.*";
 		s|ViewNavigator
 		{
-			skinClass: ClassReference("skins.CustomViewApp");
+			skinClass: ClassReference("com.renaun.flex.skins.BackgroundImageViewNavigatorSkin");
+		}
+		ree|AlternatingBackgroundImageLabelItemRenderer
+		{
+			downImage: Embed("assets/VideoPlayer.png");
+			alternatingItemImage1: Embed("assets/pic0.png");
+			alternatingItemImage2: Embed("assets/pic1.png");
 		}
 	</fx:Style>
 	<fx:Declarations>
