@@ -28,6 +28,7 @@
 				var isMultiple:Boolean = false;
 				for (var j:int = 0; j < values.length; j++) 
 				{
+					//out(j +": " + values[j]);
 					if (j == 0)
 						uc = "U+" + getValueString(values[j]);
 					if (j+1 < values.length && uc!="" && (values[j+1] == values[j]+1 || values[j+1] == values[j]))
@@ -43,7 +44,8 @@
 							else
 								out(uc);
 							isMultiple = false;
-							uc = "";
+							if (j+1 < values.length)
+								uc = "U+" + getValueString(values[j+1]);
 						}
 						else if (uc == "")
 						{
@@ -51,15 +53,15 @@
 						}
 					}
 				}
-				if (uc != "")
-					out(uc);
+				//if (uc != "")
+				//	out(uc);
 				
 				txtOutput.text = txtOutput.text.substr(0, -2);
 			}
 			
 			private function getValueString(num:uint):String
 			{
-				var msg:String = num.toString(16);num;
+				var msg:String = num.toString(16);
 				for (var i:int = msg.length; i < 4; i++) 
 				{
 					msg = "0" + msg;
@@ -83,18 +85,18 @@
   embedAsCFF: true;
   unicodeRange: U+0018, U+0020-U+007F;
 }
-OR
+-- OR --
 [Embed(source="/assets/fonts/Arial.otf", fontName="myArial",
 	unicodeRange="U+0018, U+0020-U+007F",
 	mimeType="application/x-font")]
-]]></fx:String>
+		]]></fx:String>
 	</fx:Declarations>
 	<s:layout>
 		<s:VerticalLayout paddingLeft="10" paddingRight="10" paddingTop="10" paddingBottom="10" />
 	</s:layout>
 	<s:Label text="Flash Embed Font Unicode Range Generator" fontSize="24" fontWeight="bold" />
 	<s:Label text="Input Your Text Here:" fontSize="16" fontWeight="bold" />
-	<s:TextArea id="txtInput" width="100%" height="30%" text="weekend=周末" />
+	<s:TextArea id="txtInput" width="100%" height="30%" text="weekend=周末f .;[2" />
 	<s:Button label="Generate Unicode Range" click="button1_clickHandler(event)" />
 	<s:Label text="Unicode Range:" fontSize="16" fontWeight="bold" />
 	<s:TextArea id="txtOutput" width="100%" height="40" editable="false" />
